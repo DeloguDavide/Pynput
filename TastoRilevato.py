@@ -1,4 +1,4 @@
-from pynput.keyboard import Listener
+from pynput import keyboard
 
 # Funzione che viene chiamata ogni volta che un tasto viene premuto
 def premi(key):
@@ -11,5 +11,5 @@ def premi(key):
         pass
 
 # Avvia l'ascoltatore
-with Listener(premio=premi) as listener:
+with keyboard.Listener(on_press=premi) as listener:
     listener.join()
